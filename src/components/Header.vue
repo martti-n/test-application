@@ -3,7 +3,7 @@
     <Toggle :mode="mode" @toggle="$emit('toggle')"/>
     <nav>
       <ul>
-        <li v-if="!token">
+        <li>
           <router-link to="/signin">Sign In</router-link>
         </li>
         <li>
@@ -27,11 +27,6 @@ export default {
   components: {
     Toggle
   },
-  data() {
-      return {
-        token: localStorage.token
-      }
-    },
     methods: {
       logout() {
         if(localStorage.token) {
