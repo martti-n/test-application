@@ -3,7 +3,7 @@ import VueRouter from 'vue-router'
 
 
 import ListUsers from './components/user/ListUsers.vue'
-import SigninPage from './components/Signin.vue'
+import SigninPage from './components/SignIn.vue'
 import CreateUser from './components/user/CreateUser.vue'
 import EditUser from './components/user/EditUser.vue'
 
