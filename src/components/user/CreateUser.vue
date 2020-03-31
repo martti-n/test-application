@@ -43,6 +43,7 @@ export default {
     },
     methods: {
         addUser() {
+
             const newUser = {
                 first_name:this.userData.first_name,
                 last_name: this.userData.last_name,
@@ -58,16 +59,14 @@ export default {
                     first_name:res.data.first_name,
                     last_name:res.data.last_name,
                     avatar:res.data.avatar
-                };
-
+                }
                 eventBus.$emit('addUser', newUser)
                 this.$router.push('/listUsers')
             })
             .catch(err => console.log(err))
-            
+                
         }
     }
-    
 }
 </script>
 <style scoped>
@@ -75,11 +74,14 @@ export default {
         width: 400px;
         margin: 30px auto;
         border: 1px solid #eee;
+        border-radius: 12px;
         padding: 20px;
         box-shadow: 0 2px 3px #ccc;
     }
 
     .dark .create-form {
+        background: #15202b;
+        border: none;
         box-shadow: none;
     }
 

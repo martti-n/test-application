@@ -88,12 +88,15 @@ export default {
         width: 400px;
         margin: 30px auto;
         border: 1px solid #eee;
+        border-radius: 12px;
         padding: 20px;
         box-shadow: 0 2px 3px #ccc;
     }
 
 
     .dark .edit-form {
+        background: #15202b;
+        border: none;
         box-shadow: none;
     }
 

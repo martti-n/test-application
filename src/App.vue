@@ -24,6 +24,9 @@
         mode: 'light'
       }
     },
+    mounted() {
+      this.mode = JSON.parse(localStorage.mode)
+    },
     watch: {
       mode(newMode){
         localStorage.mode = JSON.stringify(newMode)
@@ -96,11 +99,12 @@
     width: 100%;
     padding: 6px 12px;
     box-sizing: border-box;
-    border: 1px solid #ccc;
+    border: 1px solid rgb(133, 130, 130);
+    border-radius: 5px;
   }
 
   .dark .input input {
-    border: 1px solid #f3f3f3;
+    border: 1px solid #808080;
     background-color: #192734;
     color: #f3f3f3;
   }
@@ -113,11 +117,12 @@
 
   .dark .input input:focus {
     border: 1px solid #f3f3f3;
-    background-color: #1e2f3f;
+    background-color: #223446;
   }
 
   .submit button {
     border: 1px solid #15202b;
+    border-radius: 6px;
     color: #15202b;
     padding: 10px 20px;
     font: inherit;
@@ -126,7 +131,7 @@
   }
 
   .dark .submit button {
-    border: 1px solid #f3f3f3;
+    border: 1px solid #808080;
     background-color: #15202b;
     color: #f3f3f3;
   }

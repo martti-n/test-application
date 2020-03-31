@@ -50,7 +50,6 @@
         .catch(error => console.log(error))
         eventBus.$on('addUser', (newUser) => {
             this.users.push(newUser)
-            console.log(this.users)
         })
         
         eventBus.$on('userUpdated', (updatedUser) => {
@@ -138,6 +137,7 @@
     width: 60%;
     align-self: center;
   }
+
 
   .btns {
     align-items: center;
