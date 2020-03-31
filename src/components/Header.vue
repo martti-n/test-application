@@ -76,7 +76,8 @@ export default {
   li a {
     text-decoration: none;
     color: #15202b;
-    font-weight: 600;
+    font-weight: 400;
+    
   }
 
   .dark li a {
@@ -87,13 +88,13 @@ export default {
   li a:active,
   li a.router-link-active {
     color: #15202b;
-    border-bottom: 2px solid #15202b;
+    border-bottom: 1px solid #15202b;
   }
 
   .dark li a:hover,
   .dark li a:active,
   .dark li a.router-link-active {
     color: #f3f3f3;
-    border-bottom:2px solid #f3f3f3
+    border-bottom:1px solid #f3f3f3
   }
 </style>

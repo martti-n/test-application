@@ -1,7 +1,12 @@
 <template>
   <div class="app" :class="mode">
     <app-header :mode="mode" @toggle="toggle"/>
-    <router-view></router-view>
+    <transition name="slide">
+      <keep-alive include="userList">
+        <router-view includes="ListUsers.vue"></router-view>
+      </keep-alive>
+    </transition>
+    
   </div>
 </template>
 
@@ -37,9 +42,25 @@
 </script>
 
 <style>
+
+  .slide-enter-active {
+    animation: slide-fade 0.4s ease-in;
+  }
+
+
+  @keyframes slide-fade{
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+
+
   body, html {
     margin: 0;
-    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-family: 'Roboto', sans-serif;
   }
 
   .app {
@@ -101,6 +122,7 @@
     padding: 10px 20px;
     font: inherit;
     cursor: pointer;
+    transition: background 0.3s, color 0.3s;
   }
 
   .dark .submit button {
@@ -115,19 +137,6 @@
     color: #f3f3f3;
   }
 
-  .submit button[disabled],
-  .submit button[disabled]:hover,
-  .submit button[disabled]:active {
-    border: 1px solid #ccc;
-    background-color: transparent;
-    color: #ccc;
-    cursor: not-allowed;
-  }
-
-  .dark .submit button[disabled],
-  .dark .submit button[disabled]:hover,
-  .dark .submit button[disabled]:active {
-    background-color: #15202b;
-  }
+  
 
 </style>

@@ -1,7 +1,7 @@
 <template>
     <div class="createUser">
-        <h1 style="text-align:center;">Create user</h1>
-        <form class="create-form">
+        <h1 style="text-align:center; font-weight:500;">Create user</h1>
+        <form class="create-form" @submit.prevent="addUser">
             <div class="input">
                 <label for="firstname">First name:</label>
                 <input type="text" placeholder="John" id="firstname"  v-model="userData.first_name">
@@ -15,13 +15,12 @@
                 <input class="input" type="email" placeholder="johndoe@doe.com" id="email" v-model="userData.email"> 
             </div>
             <div class="input">
-                <label for="avatar">Profile picture URL:</label>
+                <label for="avatar">Profile picture:</label>
                 <input class="input" type="text" placeholder="URL" id="avatar" v-model="userData.avatar">
             </div>     
-            <div class="submit" @click.prevent="addUser()">
+            <div class="submit">
                 <button type="submit">Create</button>
             </div>
-            
         </form>
     </div>
 </template>
@@ -61,7 +60,7 @@ export default {
                     avatar:res.data.avatar
                 };
 
-                eventBus.$emit('userAdded', newUser)
+                eventBus.$emit('addUser', newUser)
                 this.$router.push('/listUsers')
             })
             .catch(err => console.log(err))
