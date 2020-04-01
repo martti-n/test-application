@@ -31,8 +31,7 @@
     data () {
       return {
         email: '',
-        password: '',
-        token:localStorage.token
+        password: ''
       }
     },
     methods: {
