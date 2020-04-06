@@ -1,5 +1,5 @@
 Test-assignment
-Version /w Vuex ---> https://github.com/martti-n/test-application-Vuex
+Version with Vuex ---> https://github.com/martti-n/test-application-Vuex
 ## Build Setup
 
 ``` bash
